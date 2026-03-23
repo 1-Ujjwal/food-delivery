@@ -1,10 +1,21 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Categories from "../Categories";
 
 const Home = () => {
   return (
     <div className="bg-slate-200 w-full min-h-screen">
       <Navbar />
+      <div className="flex flex-wrap justify-center items-center gap-5 w-full">
+        {Categories.map((item) => {
+          return (
+            <div className="w-35 h-37.5 bg-white flex flex-col items-start gap-5 p-5 justify-start text-[20px] font-semibold text-gray-600 rounded-lg shadow-xl hover:bg-green-200 cursor-pointer transition-all duration-200">
+              {item.icon}
+              {item.name}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
