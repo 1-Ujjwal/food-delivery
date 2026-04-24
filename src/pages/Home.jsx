@@ -7,6 +7,7 @@ import { dataContext } from "../context/UserContext";
 import { RxCross2 } from "react-icons/rx";
 import Card2 from "../components/Card2";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Home = () => {
   let { cate, setCate, input, showCart, setShowCart } = useContext(dataContext);
@@ -127,7 +128,12 @@ const Home = () => {
                 Rs {total}/-
               </span>
             </div>
-            <button className="w-[80%] p-3 rounded-lg bg-green-500 text-white hover:bg-green-400 transition-all">
+            <button
+              className="w-[80%] p-3 rounded-lg bg-green-500 text-white hover:bg-green-400 transition-all"
+              onClick={() => {
+                toast.success("Order Placed...");
+              }}
+            >
               Place Order
             </button>
           </>
